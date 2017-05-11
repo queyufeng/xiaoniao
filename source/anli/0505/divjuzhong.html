@@ -1,0 +1,36 @@
+---
+layout: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直水平居中</title>
+    <style type="text/css">
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            float: left;
+            position: absolute;
+            top: 50%; /*让div的左上角距离上面50%*/
+            left: 50%; /*让div的左上角距离左面50%*/
+            margin-left: -100px; /* 应为只是左上角到啦,多移动啦自身的一半,所以我们还要让他回去 */
+            margin-top: -100px;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="box"></div>
+</body>
+<script type="text/javascript">
+    var bod = document.getElementsByTagName("body")[0]
+
+    bod.style.height = window.innerHeight
+    bod.style.width = window.innerWidth
+
+
+</script>
+</html>

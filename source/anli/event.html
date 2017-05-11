@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+*{margin:0; padding:0;}
+.box1{width:100px; height:100px; background:#00f;}
+.box2{width:200px; height:20px; background:00f;  background:#060; color:#fff;}
+.box2 a{color:#000; text-decoration:none; color:#fff;}
+.box2 ul{display:none;  background:#060;}
+.box2 ul li{list-style:none;  }
+
+
+.top{width:100px; height:100px; background:#666; position:absolute; top:570px; right:20px; font-size:36px;  text-align:center; color:#fff; cursor:pointer;}
+</style>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	//单击事件
+	$("#btn1").click(function(){
+		$(".box1").animate({"width":"200px"},500);
+	})
+	
+	//获得/失去焦点事件
+	 $("input").focus(function(){
+		$("input").css("background-color","#FFFFCC");
+	  });
+	  $("input").blur(function(){
+		$("input").css("background-color","#D6D6FF");
+	  });
+	 
+	 //鼠标移入/移出事件
+	$(".box2").mouseover(function(){
+		$("ul").stop().fadeIn("fast");	
+	}).mouseout(function(){
+		$("ul").fadeOut("fast");	
+		})
+	
+	
+	/*top*/
+	var obj = $('.top');
+	var offset = obj.offset();
+	var topOffset = offset.top;
+	$(window).scroll(function() {
+	var scrollTop = $(window).scrollTop()+400;
+		if (scrollTop >= topOffset){
+			obj.animate({"top":scrollTop},10);
+		}
+		if (scrollTop < topOffset){
+			obj.css({"top": "570px"  
+			});
+		}
+	});
+	
+	$(".top").click(function(){
+		$("html,body").animate({scrollTop:"0px"},500)	
+	})
+	
+})
+</script>
+</head>
+
+<body>
+<h2>单击事件click</h2>
+<br />
+<button id="btn1">click</button>
+<div class="box1"></div>
+<br />
+<br />
+
+<h2>获得/失去焦点事件</h2>
+<br />
+姓名: <input type="text" />
+<p>请在上面的输入域中点击，使其获得焦点，然后在输入域外面点击，使其失去焦点。</p>
+<br />
+<br />
+
+<h2>鼠标移入/移出事件</h2>
+<br />
+<div class="box2">
+	<a href="#">鞋子</a>
+   	<ul>
+		<li><a href="#">帆布鞋</a></li>
+        <li><a href="#">增高鞋</a></li>
+        <li><a href="#">凉鞋</a></li>
+	</ul>
+</div>
+<div class="vspace" style="height:100px;"></div>
+
+
+
+<h2>scroll事件</h2>
+<div class="top">返回顶部</div>
+<div class="vspace" style="height:1000px;"></div>
+</body>
+</html>

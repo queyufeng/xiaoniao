@@ -1,0 +1,28 @@
+---
+layout: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var date=new Date();
+    var YY=date.getFullYear();
+    console.log(YY);
+    var MM=date.getMonth();
+    if(MM<10){
+        MM="0"+(MM+1);
+    }else {
+        MM=MM+1;
+    }
+    var DD=date.getData();
+    if(MM<10){
+        DD="0"+DD;
+    }
+    document.write(YY+"-"+MM+"-"+DD);
+</script>
+</body>
+</html>
